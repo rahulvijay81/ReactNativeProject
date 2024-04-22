@@ -4,7 +4,11 @@ import { StatusBar } from "expo-status-bar";
 const AuthLayout = () => {
   return (
     <>
-      <Stack>
+      <Stack
+        screenOptions={{
+          animation: "ios",
+        }}
+      >
         <Stack.Screen
           name="SignIn"
           options={{
