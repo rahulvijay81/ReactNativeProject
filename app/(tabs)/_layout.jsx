@@ -1,12 +1,44 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Image, Text } from "react-native";
+import { Tabs, Redirect } from "expo-router";
+import { icons } from "../../constants";
 
-const TabsLayout = () => {
+const TabIcon = ({ icon, color, name, focused }) => {
   return (
     <View>
-      <Text>TabsLayout</Text>
+      <Image
+        source={icon}
+        resizeMode="contain"
+        tintColor={color}
+        className="w-6 h-6"
+      />
+      <Text>{name}</Text>
     </View>
-  )
-}
+  );
+};
 
-export default TabsLayout
+const TabsLayout = () => {
+  const home = require("../../assets/icons/home.png");
+  return (
+    <>
+      <Tabs>
+        <Tabs.Screen
+          name="home"
+          options={{
+            title: "",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                icon={icons.home}
+                color={color}
+                name="Home"
+                focused={focused}
+              />
+            ),
+          }}
+        />
+      </Tabs>
+    </>
+  );
+};
+
+export default TabsLayout;
