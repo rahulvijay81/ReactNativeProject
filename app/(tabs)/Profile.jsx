@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { Link } from 'expo-router'
 
 const Profile = () => {
   return (
-    <View>
-      <Text>Profile</Text>
+    <View className="flex items-center justify-center w-100 h-96">
+      <Link href="/SignUp">Log Out</Link>
     </View>
   )
 }
